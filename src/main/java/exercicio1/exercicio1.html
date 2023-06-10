@@ -1,0 +1,71 @@
+<html>
+<title>
+Calculadora 
+
+</title>
+
+<body>
+
+<script>
+
+function somar(){
+	var valorA = document.getElementById("a").value;
+	var valorB = document.getElementById("b").value;
+	if(valorA == "" || valorB == ""){
+		alert("preencha todos os campos");
+		return;
+	}
+	
+	if(isNaN(valorA) || isNaN(valorB)){
+		alert("digite somente números");
+		return;
+	}
+	
+	var resultado = parseInt(valorA) + parseInt(valorB);
+	document.getElementById("resultado").innerHTML ="Resultado da soma:  "+ resultado;
+}
+
+function multiplicar(){
+	var valorA = document.getElementById("a").value;
+	var valorB = document.getElementById("b").value;
+	if(valorA == "" || valorB == ""){
+		alert("preencha todos os campos");
+		return;
+	}
+	
+	if(isNaN(valorA) || isNaN(valorB)){
+		alert("digite somente números");
+		return;
+	}
+	
+	var resultado = parseInt(valorA) * parseInt(valorB);
+	document.getElementById("resultado").innerHTML ="Resultado da mutiplicacao: " + resultado;
+}
+
+</script>
+
+<h2>Calculadora</h2>
+
+<table>
+<tr>
+	<td>Valor A </td>
+	<td> <input type="text" id="a" > </td>
+</tr>
+<tr>
+	<td>Valor b</td>
+	<td> <input type="text" id="b"><br> </td>
+</tr>
+</table>
+
+<button onclick="somar()" id="botao_somar">Somar</button>
+<button onclick="multiplicar()" id="botao_multiplicar">Multiplicar</button>
+
+<br>
+<br>
+
+<div id="resultado"></div>
+
+</body>
+
+
+</html>
